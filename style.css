@@ -218,7 +218,7 @@ body {
   pointer-events: none; /* Prevent popup from interfering with hover behavior */
 }
 
-#camera-link:hover #camera-popup {
+#comic-link:hover #comic-popup {
   display: block; /* Show popup when hovering over the camera */
 }
 
