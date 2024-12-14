@@ -79,6 +79,32 @@ body {
   z-index: 3; /* Above room but below door */
 }
 
+#stuff{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10; /* Above room but below door */
+  top: -1.7cm;
+}
+#pic{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3; /* Above room but below door */
+  
+}
+
+#cyan {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10; /* Above room but below door */
+  /*top: -1cm;*/
+}
+
 /* Shelves */
 #shelves {
   position: absolute;
@@ -86,7 +112,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 3; /* Above room but below door */
-  /*top: -1cm;*/
+  top: -1.7cm;
 }
 
 /* Speaker Button */
@@ -97,13 +123,13 @@ body {
   height: fit-content;
   cursor: zoom-in; /* Show the pointer only over the image */
   z-index: 11;
-  top:252px;
-  left: 235px;
+  top:472px;
+  left: 535px;
 }
 
 #journal {
   display: block; /* Restrict mouse area to the image itself */
-  width: 30%; /* Adjust as needed */
+  width: 40%; /* Adjust as needed */
   height: auto;
   object-fit: cover;
   transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transitions */
@@ -149,15 +175,15 @@ body {
   display: inline-block; /* Match clickable area to the content */
   cursor: zoom-in; /* Pointer to indicate interactivity */
   z-index: 11;
-  top: 252px;
-  left: 580px;
+  top: 472px;
+  left: 780px;
   width: fit-content;
   height: fit-content;
 }
 
 #comic {
   display: block; /* Prevent extra spacing around the image */
-  width: 30%; /* Adjust as needed */
+  width: 40%; /* Adjust as needed */
   height: auto;
   object-fit: cover; /* Maintain aspect ratio */
   transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth effects */
@@ -175,25 +201,25 @@ body {
 /* Comic Popup */
 #comic-popup {
   display: none; /* Hidden by default */
-  position: absolute;
-  top: 110%; /* Below the comic image */
-  left: 50%; /* Center horizontally relative to the image */
-  transform: translateX(-50%); /* Center alignment */
-  background-color: white;
-  color: #003665;
-  border: 2px solid skyblue;
-  padding: 10px 20px;
-  font-size: 16px;
+  position: fixed;
+  left: 20px; /* Start at the middle horizontally */
+  top: 230px /* Start at the middle vertically */
+  transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
+  background-color: white; /* White background */
+  color: #003665; /* Navy blue text */
+  border: 2px solid skyblue; /* Sky blue margin */
+  padding: 10px 20px; /* Adjust padding for better appearance */
+  font-size: 16px; /* Slightly larger font for better visibility */
   font-weight: bold;
-  border-radius: 10px;
-  white-space: nowrap;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  pointer-events: none; /* Prevent the popup from blocking mouse interactions */
+  border-radius: 10px; /* Rounded corners */
+  white-space: nowrap; /* Prevent line breaks */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  z-index: 100; /* Ensure it appears above other elements */
+  pointer-events: none; /* Prevent popup from interfering with hover behavior */
 }
 
-#comic-link:hover #comic-popup {
-  display: block; /* Show popup when hovering over the comic */
+#camera-link:hover #camera-popup {
+  display: block; /* Show popup when hovering over the camera */
 }
 
 /* Comic Button */
@@ -202,15 +228,15 @@ body {
   display: inline-block; /* Match clickable area to the content */
   cursor: zoom-in; /* Pointer to indicate interactivity */
   z-index: 11;
-  top: 272px;
-  left: 460px;
+  top: 502px;
+  left: 960px;
   width: fit-content;
   height: fit-content;
 }
 
 #camera {
   display: block; /* Prevent extra spacing around the image */
-  width: 30%; /* Adjust as needed */
+  width: 40%; /* Adjust as needed */
   height: auto;
   object-fit: cover; /* Maintain aspect ratio */
   transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth effects */
@@ -250,6 +276,13 @@ body {
 }
 
 
+
+
+
+
+
+
+
 /* Speaker Button */
 #speaker-link {
   position: absolute; /* Or relative, based on your layout */
@@ -258,13 +291,13 @@ body {
   height: fit-content;
   cursor: zoom-in; /* Show the pointer only over the image */
   z-index: 11;
-  top:258px;
-  left: 350px;
+  top:490px;
+  left: 1260px;
 }
 
 #speaker {
   display: block; /* Restrict mouse area to the image itself */
-  width: 33%; /* Adjust as needed */
+  width: 40%; /* Adjust as needed */
   height: auto;
   object-fit: cover;
   transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transitions */
