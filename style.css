@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Intro Section */
+#intro {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe4c4;
+  overflow: hidden;
+}
+
+/* Door */
+#door {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 2s ease-in-out;
+  z-index: 20; /* Ensure door is on top */
+}
+
+/* Room Background */
+#room {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe4c4;
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Base layer */
+  animation: breathingAnimation 6s infinite ease-in-out; /* Smooth breathing */
+}
+
+/* Chair */
+#chair {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 5; /* Above room but below door */
+}
+
+/* Grid */
+#grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3; /* Above room but below door */
+}
+
+/* Name */
+#name {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3; /* Above room but below door */
+  top: -0.5cm;
+  left: -1cm;
+}
+
+/* Plant */
+#plant {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3; /* Above room but below door */
+}
+
+/* Shelves */
+#shelves {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3; /* Above room but below door */
+  /*top: -1cm;*/
+}
+
+/* Speaker Button */
+#journal-link {
+  position: absolute; /* Or relative, based on your layout */
+  display: inline-block; /* Wrap tightly around content */
+  width: fit-content;
+  height: fit-content;
+  cursor: zoom-in; /* Show the pointer only over the image */
+  z-index: 11;
+  top:252px;
+  left: 235px;
+}
+
+#journal {
+  display: block; /* Restrict mouse area to the image itself */
+  width: 30%; /* Adjust as needed */
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transitions */
+}
+
+#journal-link:hover #journal {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  /*box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); Add subtle glow */
+}
+
+#journal-link:active #journal{
+  transform: scale(1.1); /* Slightly shrink on click */
+}
+
+/* Popup Message */
+#popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 20px; /* Start at the middle horizontally */
+  top: 230px /* Start at the middle vertically */
+  transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
+  background-color: white; /* White background */
+  color: #003665; /* Navy blue text */
+  border: 2px solid skyblue; /* Sky blue margin */
+  padding: 10px 20px; /* Adjust padding for better appearance */
+  font-size: 16px; /* Slightly larger font for better visibility */
+  font-weight: bold;
+  border-radius: 10px; /* Rounded corners */
+  white-space: nowrap; /* Prevent line breaks */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  z-index: 100; /* Ensure it appears above other elements */
+  pointer-events: none; /* Prevent popup from interfering with hover behavior */
+}
+
+#journal-link:hover #popup {
+  display: block; /* Show popup when the speaker is hovered */
+}
+
+
+/* Comic Button */
+#comic-link {
+  position: absolute;
+  display: inline-block; /* Match clickable area to the content */
+  cursor: zoom-in; /* Pointer to indicate interactivity */
+  z-index: 11;
+  top: 252px;
+  left: 580px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#comic {
+  display: block; /* Prevent extra spacing around the image */
+  width: 30%; /* Adjust as needed */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio */
+  transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth effects */
+}
+
+#comic-link:hover #comic {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Add glow */
+}
+
+#comic-link:active #comic {
+  transform: scale(1.1); /* Slightly shrink on click */
+}
+
+/* Comic Popup */
+#comic-popup {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 110%; /* Below the comic image */
+  left: 50%; /* Center horizontally relative to the image */
+  transform: translateX(-50%); /* Center alignment */
+  background-color: white;
+  color: #003665;
+  border: 2px solid skyblue;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  pointer-events: none; /* Prevent the popup from blocking mouse interactions */
+}
+
+#comic-link:hover #comic-popup {
+  display: block; /* Show popup when hovering over the comic */
+}
+
+/* Comic Button */
+#camera-link {
+  position: absolute;
+  display: inline-block; /* Match clickable area to the content */
+  cursor: zoom-in; /* Pointer to indicate interactivity */
+  z-index: 11;
+  top: 272px;
+  left: 460px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#camera {
+  display: block; /* Prevent extra spacing around the image */
+  width: 30%; /* Adjust as needed */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio */
+  transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth effects */
+}
+
+#camera-link:hover #camera {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Add glow */
+}
+
+#camera-link:active #camera {
+  transform: scale(1.1); /* Slightly shrink on click */
+}
+
+/* Comic Popup */
+#camera-popup {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 110%; /* Below the comic image */
+  left: 50%; /* Center horizontally relative to the image */
+  transform: translateX(-50%); /* Center alignment */
+  background-color: white;
+  color: #003665;
+  border: 2px solid skyblue;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  pointer-events: none; /* Prevent the popup from blocking mouse interactions */
+}
+
+#camera-link:hover #camera-popup {
+  display: block; /* Show popup when hovering over the comic */
+}
+
+
+/* Speaker Button */
+#speaker-link {
+  position: absolute; /* Or relative, based on your layout */
+  display: inline-block; /* Wrap tightly around content */
+  width: fit-content;
+  height: fit-content;
+  cursor: zoom-in; /* Show the pointer only over the image */
+  z-index: 11;
+  top:258px;
+  left: 350px;
+}
+
+#speaker {
+  display: block; /* Restrict mouse area to the image itself */
+  width: 33%; /* Adjust as needed */
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transitions */
+}
+
+#speaker-link:hover #speaker {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Add subtle glow */
+}
+
+#speaker-link:active #speaker {
+  transform: scale(1.1); /* Slightly shrink on click */
+}
+
+/* Popup Message */
+#popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 20px; /* Start at the middle horizontally */
+  top: 230px /* Start at the middle vertically */
+  transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
+  background-color: white; /* White background */
+  color: #003665; /* Navy blue text */
+  border: 2px solid skyblue; /* Sky blue margin */
+  padding: 10px 20px; /* Adjust padding for better appearance */
+  font-size: 16px; /* Slightly larger font for better visibility */
+  font-weight: bold;
+  border-radius: 10px; /* Rounded corners */
+  white-space: nowrap; /* Prevent line breaks */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  z-index: 100; /* Ensure it appears above other elements */
+  pointer-events: none; /* Prevent popup from interfering with hover behavior */
+}
+
+#speaker-link:hover #popup {
+  display: block; /* Show popup when the speaker is hovered */
+}
+
+
+
+/* Breathing Human */
+#hb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3; /* Same level as chair */
+}
+
+/* Fringe */
+#fringe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 4; /* Above HB */
+}
+
+/* Hair Strands */
+#left-strand, #right-strand {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 4; /* Above HB */
+}
+
+/* Keyframe for breathing animation */
+@keyframes breathingAnimation {
+  0%, 100% {
+    background-image: url('b1.png');
+  }
+  33% {
+    background-image: url('b2.png');
+  }
+  66% {
+    background-image: url('b3.png');
+  }
+}
+
+/* Remove link decoration */
+a {
+  text-decoration: none;
+}
+
+a img {
+  display: block;
+}
